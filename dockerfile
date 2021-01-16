@@ -7,12 +7,12 @@ RUN apt-get update -y
  
 #
 # Install NGINX to test.
-RUN apt-get install httpd -y
+RUN touch webserver.txt
  
 #
 # Expose port 80
-EXPOSE 80
+#EXPOSE 80
  
 #
 # Last is the actual command to start up NGINX within our Container
-CMD ["httpd", "-g", "daemon off;"]
+#CMD ["httpd", "-g", "daemon off;"]

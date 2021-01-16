@@ -1,5 +1,18 @@
-FROM alpine:3.4
+FROM ubuntu:latest
 
-RUN apk update
-RUN apk add vim
-RUN apk add curl
+ 
+#
+# Update the image to the latest packages
+RUN apt-get update -y
+ 
+#
+# Install NGINX to test.
+RUN apt-get install nginx -y
+ 
+#
+# Expose port 80
+EXPOSE 80
+ 
+#
+# Last is the actual command to start up NGINX within our Container
+CMD ["nginx", "-g", "daemon off;"]
